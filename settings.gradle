@@ -1,0 +1,4 @@
+
+rootProject.name = "zdd_componet"
+include ':app'
+include ':user_componet'

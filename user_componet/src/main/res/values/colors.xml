@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="user_componet_colorPrimary">#FDCF00</color>
+    <color name="user_componet_colorPrimaryDark">#FDCF00</color>
+    <color name="user_componet_colorAccent">#03DAC5</color>
+</resources>
