@@ -21,6 +21,7 @@ public class LoginActivity extends BaseMVVMActivity<LogInBinding,LogInViewModel>
     }
 
 
+
     @Override
     public int initVariableId() {
         return BR.viewModel;
