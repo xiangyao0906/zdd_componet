@@ -1,4 +1,4 @@
-
 rootProject.name = "zdd"
 include ':app'
 include ':user_component'
+include ':xinlycore'

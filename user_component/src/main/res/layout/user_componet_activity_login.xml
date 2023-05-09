@@ -1,13 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LoginActivity">
-    <TextView
-        android:background="@color/user_componet_colorPrimary"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</LinearLayout>
+    <data class="LogInBinding">
+
+        <variable
+            name="viewModel"
+            type="com.juju.zhdd.usercomponet.login.LogInViewModel" />
+
+    </data>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".login.LoginActivity">
+
+        <include
+            layout="@layout/layout_toolbar"
+            bind:toolBar="@{viewModel}" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_23"
+                android:layout_marginTop="@dimen/dp_50"
+                android:drawablePadding="@dimen/dp_negtive_10"
+                android:text="@string/user_componet_activity_login_text_0"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/text_sp_28"
+                android:textStyle="bold"
+                app:drawableBottomCompat="@drawable/dl_bt_xiahuaxian"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:text="@string/user_componet_activity_login_text_1"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/text_sp_14"
+                app:layout_constraintLeft_toLeftOf="@+id/tv1"
+                app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+
+            <EditText
+                android:id="@+id/userPhone"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_70"
+                android:layout_marginStart="@dimen/dp_26"
+                android:layout_marginEnd="@dimen/dp_26"
+                android:background="@android:color/transparent"
+                android:hint="@string/user_componet_activity_login_text_2"
+                android:inputType="number"
+                android:lines="1"
+                android:maxLength="11"
+                android:paddingTop="@dimen/dp_4"
+                android:paddingBottom="@dimen/dp_4"
+                android:text="@={viewModel.phoneNumber}"
+                android:textColor="@color/color_333333"
+                android:textColorHint="@color/color_cc"
+                android:textSize="@dimen/text_sp_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv2"
+                bind:checkMobile="@{viewModel.isMobileCheckAction}" />
+
+
+            <View
+                android:id="@+id/v2"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_5"
+                android:background="@color/banner_normal_index_color"
+                app:layout_constraintEnd_toEndOf="@id/userPhone"
+                app:layout_constraintStart_toStartOf="@id/userPhone"
+                app:layout_constraintTop_toBottomOf="@+id/userPhone" />
+
+            <LinearLayout
+                android:id="@+id/codeLayout"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_15"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/v2"
+                app:layout_constraintStart_toStartOf="@id/v2"
+                app:layout_constraintTop_toBottomOf="@id/v2">
+
+                <EditText
+                    android:id="@+id/msgCode"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/user_componet_activity_login_text_3"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLength="11"
+                    android:paddingTop="@dimen/dp_4"
+                    android:paddingBottom="@dimen/dp_4"
+                    android:text="@={viewModel.code}"
+                    android:textColor="@color/color_333333"
+                    android:textColorHint="@color/color_cc"
+                    android:textSize="@dimen/text_sp_16" />
+
+                <TextView
+                    android:enabled="@{viewModel.codeEnabled}"
+                    android:textSize="@dimen/text_sp_16"
+                    android:id="@+id/sendCodeTv"
+                    onClickCommand="@{viewModel.sendCodeAction}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.codeMessage}"
+                    android:textColor="@{viewModel.codeEnabled?@color/color_333333:@color/color_cc}"
+                    tools:text="发送验证码" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/v3"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_5"
+                android:background="@color/banner_normal_index_color"
+                app:layout_constraintEnd_toEndOf="@id/codeLayout"
+                app:layout_constraintStart_toStartOf="@id/codeLayout"
+                app:layout_constraintTop_toBottomOf="@+id/codeLayout" />
+
+            <Button
+                android:enabled="false"
+                android:id="@+id/tvSend"
+                onClickCommand="@{viewModel.logInAction}"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_44"
+                android:layout_marginTop="@dimen/dp_40"
+                android:background="@drawable/user_componet_login_button_selector"
+                android:gravity="center"
+                android:text="@string/user_componet_login_title"
+                android:textColor="@color/login_button_text_selector"
+                android:textSize="@dimen/text_sp_15"
+                app:layout_constraintLeft_toLeftOf="@+id/v3"
+                app:layout_constraintRight_toRightOf="@+id/v3"
+                app:layout_constraintTop_toBottomOf="@+id/v3"
+                tools:editable="false" />
+
+
+            <LinearLayout
+                android:id="@+id/logInTypeTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_53"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSend">
+
+                <View
+                    android:layout_width="@dimen/dp_58"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_marginStart="@dimen/dp_50"
+                    android:background="@drawable/user_componet_wechat_left_line" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_marginEnd="@dimen/dp_8"
+                    android:text="@string/user_componet_activity_login_text_4"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/text_sp_12" />
+
+                <View
+                    android:layout_width="@dimen/dp_58"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_marginEnd="@dimen/dp_50"
+                    android:background="@drawable/user_componet_wechat_right_line" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/wechatIv"
+                onClickCommand="@{viewModel.weChatLoginAction}"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_19"
+                android:src="@drawable/dl_icon_weixin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logInTypeTv" />
+
+
+            <LinearLayout
+                android:id="@+id/agreemetLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toTopOf="@id/tipsTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <CheckBox
+                    android:id="@+id/hahah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:button="@drawable/user_componet_selector_check_xy"
+                    android:checked="@={viewModel.mServiceCheckStatus}"
+                    android:paddingStart="@dimen/dp_4"
+                    android:text="@string/user_componet_activity_login_text_5"
+                    android:textColor="@color/font_66"
+                    android:textSize="@dimen/font_size_12" />
+
+                <TextView
+                    android:id="@+id/agreemetTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_componet_login_agreenment"
+                    android:textSize="@dimen/font_size_12" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tipsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_36"
+                android:text="@string/user_componet_activity_login_text_6"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/text_sp_10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="120dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:background="@drawable/dialog_bg_white"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.juju.core.widgets.dialog.LoadingView
+        android:id="@+id/activity_indicator"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:aiv_color="#A2A3B0"
+        app:aiv_strokeWidth="2.5dp" />
+
+
+    <TextView
+        android:id="@+id/dialog_loading_custom_tv_tips"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_loading_text_0" />
+</LinearLayout>

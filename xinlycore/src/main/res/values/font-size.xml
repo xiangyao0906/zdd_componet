@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="font_small_size">12sp</dimen>
+    <dimen name="font_middle_size">14sp</dimen>
+    <dimen name="font_big_size">16sp</dimen>
+    <dimen name="font_large_size">18sp</dimen>
+
+    <!-- 设计可能是偏爱奇数 -->
+    <dimen name="font_size_10">10sp</dimen>
+    <dimen name="font_size_11">11sp</dimen>
+    <dimen name="font_size_12">12sp</dimen>
+    <dimen name="font_size_13">13sp</dimen>
+    <dimen name="font_size_14">14sp</dimen>
+    <dimen name="font_size_15">15sp</dimen>
+    <dimen name="font_size_17">17sp</dimen>
+    <dimen name="font_size_24">24sp</dimen>
+    <dimen name="font_size_36">36sp</dimen>
+
+</resources>

@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.xinly.core">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:fullBackupContent="@xml/my_backup_scheme"
+        android:networkSecurityConfig="@xml/network_config"
+        tools:targetApi="n"/>
+</manifest>

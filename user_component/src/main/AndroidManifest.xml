@@ -5,7 +5,7 @@
 
     <application>
         <activity
-            android:name=".LoginActivity"
+            android:name=".login.LoginActivity"
             android:exported="false" />
     </application>
 

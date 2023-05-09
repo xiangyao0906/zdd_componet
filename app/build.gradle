@@ -55,6 +55,14 @@ android {
         versionName rootProject.ext.android.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        dataBinding {
+            enabled = true
+        }
+
+        lintOptions {
+            disable 'MissingTranslation'
+        }
     }
 
 
