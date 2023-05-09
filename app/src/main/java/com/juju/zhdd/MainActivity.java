@@ -1,9 +1,8 @@
 package com.juju.zhdd;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.billy.cc.core.component.CC;
 

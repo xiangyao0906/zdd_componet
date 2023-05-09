@@ -1,12 +1,7 @@
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-    id 'kotlin-android-extensions'
-    id 'kotlin-kapt'
-}
-apply from: rootProject.file('cc-settings-demo.gradle')
-
 ext.mainApp = true  //设置为true，表示此module为主app module，一直以application方式编译
+apply from: rootProject.file('cc-settings-demo.gradle')
+apply plugin: 'org.jetbrains.kotlin.android'
+
 
 /**
  * 初始化签名信息*/
@@ -51,6 +46,7 @@ task initKeyStore() {
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
+
     defaultConfig {
         applicationId rootProject.ext.android.applicationId
         minSdkVersion rootProject.ext.android.minSdkVersion
@@ -87,8 +83,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-
-    addComponent 'user_componet'
+    addComponent 'user_component'
 
 
 }

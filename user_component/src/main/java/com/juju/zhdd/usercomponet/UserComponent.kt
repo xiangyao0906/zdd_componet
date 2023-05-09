@@ -1,4 +1,4 @@
-package com.juju.zhdd.user_componet
+package com.juju.zhdd.usercomponet
 
 import com.billy.cc.core.component.CC
 import com.billy.cc.core.component.CCResult

@@ -1,8 +1,9 @@
-package com.juju.zhdd.user_componet;
+package com.juju.zhdd.usercomponet;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
 
 /**
  * @author xiangyao

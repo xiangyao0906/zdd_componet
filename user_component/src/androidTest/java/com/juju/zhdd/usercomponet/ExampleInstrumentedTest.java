@@ -1,4 +1,4 @@
-package com.juju.zhdd.user_componet;
+package com.juju.zhdd.usercomponet;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.juju.zhdd.user_componet", appContext.getPackageName());
+        assertEquals("com.juju.zhdd.usercomponet", appContext.getPackageName());
     }
 }

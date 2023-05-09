@@ -1,4 +1,4 @@
 
-rootProject.name = "zdd_componet"
+rootProject.name = "zdd"
 include ':app'
-include ':user_componet'
+include ':user_component'
