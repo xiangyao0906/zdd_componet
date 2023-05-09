@@ -20,6 +20,7 @@ public class LoginActivity extends BaseMVVMActivity<LogInBinding,LogInViewModel>
         return R.layout.user_componet_activity_login;
     }
 
+
     @Override
     public int initVariableId() {
         return BR.viewModel;
